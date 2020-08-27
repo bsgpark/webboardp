@@ -37,12 +37,25 @@
 <link href="./assets/css/style.css?ver=<%=i%>" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+<% if(session.getAttribute("mid") == null){ %>
 	<div class = "container">
 		<div class = "menu">
 		<div><a href="">메인메뉴</a></div>
+		<div><a href="create.jsp">글쓰기</a></div>
 		<div><a href="Register.jsp">회원가입</a>
 			 <a href="Login.jsp">로그인</a></div>
 		</div>
 	</div>
-
+<% } else {%>
+	<div class = "container">
+		<div class = "menu">
+		<div><a href="">메인메뉴</a></div>
+		<div><a href="create.jsp">글쓰기</a></div>
+		<div><a href="List.jsp">글목록</a></div>
+		<div><a href="Member_edit.jsp">회원 정보 수정</a>
+			 <a href="Logout.jsp">로그아웃</a></div>
+		</div>
+	</div>
+<%} %>
 

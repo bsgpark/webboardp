@@ -125,25 +125,19 @@ function check_ok() {
 		  .done(function( response ) {
 			  console.log(response);
 			var data = JSON.parse(response.trim());
-			 if (data.result==1) {
+			 if (data.result==1 ) {
 				 alert(data.msg);
-	                if(focusble) {
-	                     $("#email").focus();
-	                     focusble = false;
-	                  }
-	                return false;
-
-				 //document.location.replace(data.url);
+				 document.location.replace(data.url);
 			 } else {
 				 alert(data.msg);
 				 document.location.replace(data.url);
 				 
 			 }
 		  });		
-	/*  else {
+	}else {
 		return false;
-	}
-
+		}
 	return false;
-} */
+	}
+	
 </script>
