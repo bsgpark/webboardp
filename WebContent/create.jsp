@@ -55,6 +55,6 @@
 				alert(data.msg);//저장 실패
 			}
 		});
-		
+		return false;
 	}
 </script>
