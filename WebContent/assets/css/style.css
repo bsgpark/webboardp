@@ -12,16 +12,42 @@ footer{
 .menu{
 	padding:10px 30px;
 	margin: 30px;
-	heigth: 30px;
-	background-color:#E6E6E6;
+	height: 30px;
+	text-align: left;
+	color:darkslategray;
+	text-decoration: none;
+	font-weight: bold;
+	display: flex;
+	justify-content:space-evenly;
+	display: -webkit-flex;
+	align-items:center;
+	
+	
+} 
+.menul:hover{
+    color: gray;
+    text-decoration: none;
+}
+.menuR{
+	padding:5px 30px;
+	margin: 30px;
+	height: 30px;
+	text-align: right;
+	color:darkslategray;
+	text-decoration: none;
 	display: flex;
 	justify-content:space-evenly;
 	display: -webkit-flex;
 	align-items:center;
 	
 } 
+.menuR:hover{
+    color: gray;
+    text-decoration: none;
+}
 .container{
 	display: grid;
+
 }
 
 .form-input{
@@ -44,3 +70,16 @@ footer{
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
 }
+
+.pagination{
+	display:flex;
+	list-style: none;
+
+}
+.pagelink{
+	padding :10px;
+	border : 1px solid #A3A3A3;
+	text-decoration:none;
+
+}
+

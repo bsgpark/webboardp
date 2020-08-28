@@ -84,8 +84,16 @@
 		pstmt.setInt(7, 0);
 		pstmt.setLong(8, intUnixTime);
 		
-		int prs = pstmt.executeUpdate();		
-		
+		int prs = pstmt.executeUpdate();
+		//기본글의 id를 계층형을 만들때 쓰는 masterid와 일치 시켜 주어야 그 글에 생긴 답글이 id 밑으로 정렬될 수 있다. 
+		rs = pstmt.executeQuery("SELECT last_insert_id()");
+			if(rs.next()) {
+				int masterid = rs.getInt(1);
+				pstmt = conn.prepareStatement("UPDATE community set masterid = ? where idx = ?");
+				pstmt.setInt(1, masterid);
+				pstmt.setInt(2, masterid);
+				pstmt.executeUpdate();	
+			}
 		pstmt.close();
 		conn.close();
 		
@@ -107,9 +115,9 @@
 	}
 	
 	
-}/* catch (Exception e) {
+}catch (Exception e) {
 	// 에러 메시지 출력
 	e.printStackTrace(new java.io.PrintWriter(out));
-} */
+}
 	
 %>

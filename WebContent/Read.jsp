@@ -40,6 +40,7 @@
 		<div>내용<%=contents %></div>
 		
 		<div><a href="List.jsp">목록으로 가기</a></div>
+		<div><a href="Reply.jsp?idx=<%=id%>">답글 쓰기</a></div>
 		
 	</div>
 <%@ include file = "Footer.jsp" %>
